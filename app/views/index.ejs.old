@@ -6,5 +6,9 @@
 </head>
 <body>
 	<h1>Bem-vindo ao <%=nome %></h1>
+	<button class="botao-grava">Novo</button>
+	<p class="contatos">
+		Contatos cadastrados: 0
+	</p>
 </body>
 </html>

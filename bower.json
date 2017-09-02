@@ -1,0 +1,20 @@
+{
+  "name": "testemean",
+  "version": "0.0.0",
+  "homepage": "https://github.com/pehls/shoppingCart",
+  "authors": [
+    "Gabriel Pehls <gabrielpehls@hotmail.com>"
+  ],
+  "description": "sistema mean para teste",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.3"
+  }
+}
