@@ -5,10 +5,10 @@
 
     <meta name="viewport" content="width=device-width">
     <meta charset="UTF-8">
-
+<!-- build:css css/index.min.css -->
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap-theme.css">
-
+<!-- endbuild -->
   </head>
 
   <body class="container">
@@ -18,12 +18,21 @@
           Logado como: <span id="usuario-logado">
                 <%=usuarioLogado %> |
          <span>
+           <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a ng-href="#/">Home</a></li>
+                    <li><a ng-href="#/me">Me</a></li>
+                    <li><a ng-href="#/signin">Signin</a></li>
+                    <li><a ng-href="#/signup">Signup</a></li>
+                    <li><a ng-click="logout()">Logout</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
          <a href="/logout">Logout</a>
         </p>
       </div>
     <% } %>
     <div ng-view></div>
-
+    <!-- build:js js;index.min.js-->
   	<script src="vendor/angular/angular.js"></script>
   	<script src="vendor/angular-route/angular-route.js"></script>
     <script src="vendor/angular-resource/angular-resource.js"></script>
@@ -32,7 +41,9 @@
     <script src="js/services/InterceptorService.js"></script>
   	<script src="js/controllers/CarrinhosController.js"></script>
   	<script src="js/controllers/CarrinhoController.js"></script>
-
+    <script src="js/controllers/controllers.js"></script>
+    <script src="js/services/services.js"
+    <!-- endbuild -->
 
   </body>
 </html>

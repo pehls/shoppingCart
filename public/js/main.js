@@ -4,6 +4,7 @@ angular.module('shoppingcart', ['ngRoute','ngResource'])
 
    $httpProvider.interceptors.push('meuInterceptor');
 
+
    $routeProvider.when('/carrinhos', {
      templateUrl: 'partials/carrinhos.html',
      controller: 'CarrinhosController'
@@ -22,6 +23,6 @@ angular.module('shoppingcart', ['ngRoute','ngResource'])
    $routeProvider.when('/auth', {
      templateUrl: 'partials/auth.html'
    });
-
+  
    $routeProvider.otherwise({redirectTo: '/carrinhos'});
 });

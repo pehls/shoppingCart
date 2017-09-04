@@ -6,7 +6,7 @@ module.exports = function() {
     nome: {
       type: String,
       required:true
-    },
+    }
   });
 
   return mongoose.model('Carrinho', Schema);

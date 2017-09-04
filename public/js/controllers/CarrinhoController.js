@@ -27,5 +27,9 @@ function($scope, Carrinho, $routeParams) {
 			.catch(function(erro) {
 				$scope.mensagem = {texto: 'Não foi possível salvar'};
 			});
-	};
+		};
+
+		Carrinho.query(function(carrinhos) {
+			$scope.carrinhos = carrinhos;
+    	});
 });

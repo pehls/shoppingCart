@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
 var helmet = require('helmet');
+var jwt = require('jsonwebtoken');
 
 module.exports = function() {
   var app = express();
@@ -22,11 +23,17 @@ module.exports = function() {
   app.use(cookieParser());
   app.use(session (
     {
-      secret: 'homem avestruz',
+      secret: 'opalao monocromatico',
       resave: true,
       saveUninitialized: true
     }
   ));
+//   app.use(function(req, res, next) {
+//     res.setHeader('Access-Control-Allow-Origin', '*');
+//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+//     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
+//     next();
+// });
   app.use(passport.initialize());
   app.use(passport.session());
   //evitar clickjacking

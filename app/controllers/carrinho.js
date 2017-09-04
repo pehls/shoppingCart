@@ -20,9 +20,9 @@ module.exports = function(app) {
     var_id = req.params.id;
     Carrinho.findById(_id).exec()
     .then(
-      function(carrinhos) {
+      function(carrinho) {
         if(!carrinhos) throw new Error("carrinho não encontrado");
-        res.json(carrinhos);
+        res.json(carrinho);
       },
       function(erro) {
         console.log(erro);
@@ -45,35 +45,37 @@ module.exports = function(app) {
   };
 
   controller.salvaCarrinho = function(req, res) {
-    var _id = req.body.id;
-    //evitar dados a mais, informações que não dizem respeito ao produto/carrinho
-    var dados = {
-      "nome": req.body.nome
-    }
-    if (_id) {
-      Carrinho.findByIdAndUpdate(_id, dados).exec()
-      .then (
-        function(carrinhos) {
-          res.json(carrinhos);
-        },
-        function(erro) {
-          console.error(erro);
-          res.status(500).json(erro);
-        }
-      )
-    } else {
-      Carrinho.create(dados)
-      .then (
-        function(carrinho) {
-          res.status(201).json(carrinho);
-        },
-        function(erro) {
-          console.log(erro);
-          res.status(500).json(erro);
-        }
-      );
-    }
-  };
 
-  return controller;
-};
+      var _id = req.body._id;
+
+      var dados = {
+        "nome" : req.body.nome
+      };
+
+      if(_id) {
+       Carrinho.findByIdAndUpdate(_id, dados).exec()
+       .then(
+        function(carrinho) {
+          res.json(carrinho);
+        },
+        function(erro) {
+          console.error(erro)
+          res.status(500).json(erro);
+        }
+       );
+      } else {
+        Carrinho.create(dados)
+        .then(
+          function(carrinho) {
+            res.status(201).json(carrinho);
+          },
+          function(erro) {
+            console.log(erro);
+            res.status(500).json(erro);
+          }
+        );
+      }
+    };
+
+    return controller;
+  };

@@ -14,7 +14,7 @@ module.exports = function() {
   }, function(accesToken, refreshToken, profile, done) {
 
     Usuario.findOrCreate(
-      { "login" : profile.username},
+      { "login" : profile.email},
       { "nome"  : profile.displayName},
       function(erro, usuario) {
         if(erro) {
