@@ -1,3 +1,5 @@
+
+
 <!-- public/index.html -->
 <!doctype html>
 <html ng-app="shoppingcart">
@@ -12,37 +14,38 @@
   </head>
 
   <body class="container">
-    <%if (usuarioLogado.length > 0) { %>
+
       <div class="text-right">
-        <p>
-          Logado como: <span id="usuario-logado">
-                <%=usuarioLogado %> |
-         <span>
-           <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a ng-href="#/">Home</a></li>
-                    <li><a ng-href="#/me">Me</a></li>
-                    <li><a ng-href="#/signin">Signin</a></li>
-                    <li><a ng-href="#/signup">Signup</a></li>
-                    <li><a ng-click="logout()">Logout</a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
-         <a href="/logout">Logout</a>
-        </p>
+        <!-- <h1>Hi {{vm.username}}!</h1> -->
+  <p><a href="#!/login" class="btn btn-primary">Logout</a></p>
+
       </div>
-    <% } %>
-    <div ng-view></div>
+      <div class="jumbotron">
+             <div class="container">
+                 <div class="col-sm-8 col-sm-offset-2">
+                     <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+                     <div ng-view></div>
+                 </div>
+             </div>
+         </div>
+
     <!-- build:js js;index.min.js-->
   	<script src="vendor/angular/angular.js"></script>
   	<script src="vendor/angular-route/angular-route.js"></script>
     <script src="vendor/angular-resource/angular-resource.js"></script>
-  	<script src="js/main.js"></script>
+    <script src="vendor/angular-cookies/angular-cookies.js"></script>
+    <script src ="vendor/jquery/dist/jquery.min.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/services/CarrinhoService.js"></script>
+    <script src="js/services/UserService-LocalStorage.js"></script>
     <script src="js/services/InterceptorService.js"></script>
+    <script src="js/services/AuthenticationService.js"></script>
+    <script src="js/services/FlashService.js"></script>
   	<script src="js/controllers/CarrinhosController.js"></script>
   	<script src="js/controllers/CarrinhoController.js"></script>
-    <script src="js/controllers/controllers.js"></script>
-    <script src="js/services/services.js"
+    <script src="js/controllers/HomeController.js"></script>
+    <script src="js/controllers/RegisterController.js"></script>
+    <script src="js/controllers/LoginController.js"></script>
     <!-- endbuild -->
 
   </body>

@@ -47,7 +47,7 @@ module.exports = function() {
   //query selector injection no controller
   load('models', {cwd: 'app'})
     .then('controllers')
-    .then('routes/auth.js')
+    .then('routes/index.js')
     .then('routes')
     .into(app);
 
