@@ -24,4 +24,8 @@ var controller = app.controllers.carrinho;
   app.route('/carrinhos/:id')
 	.get(controller.obtemCarrinho)
 	.delete( controller.removeCarrinho);
+
+  app.route('/carrinho/:id')
+	.get(controller.obtemCarrinho)
+	.delete( controller.removeCarrinho);
 };

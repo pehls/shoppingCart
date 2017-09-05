@@ -23,14 +23,14 @@ angular.module('shoppingcart').controller('CarrinhosController',
       buscaCarrinhos();
 
       $scope.remove = function(carrinho) {
-        Carrinho.delete({id: carrinho.id},
-          buscaCarrinhos,
-          function(erro) {
-            $scope.mensagem = {
-              texto: 'Não foi possível remover o carrinho'
-            };
-            console.log(erro);
-          }
-        );
-      };
-  });
+        Carrinho.delete({_id: carrinho._id},
+        buscaCarrinhos,
+        function(erro) {
+          $scope.mensagem = {
+            texto: 'Não foi possível remover o produto'
+          };
+          console.log(erro);
+        }
+      );
+    };
+});

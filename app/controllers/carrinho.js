@@ -36,13 +36,14 @@ module.exports = function(app) {
     };
 
 
-  controller.removeCarrinho = function(req, res) {
-    var idCarrinho = req.params.id;
-   carrinhos = carrinhos.filter(function(carrinho) {
-     return carrinho._id != idCarrinho;
-   });
-   res.sendStatus(204).end();
- };
+    controller.removeCarrinho = function(req, res) {
+
+      var idCarrinho = req.params.id;
+      carrinhos = carrinhos.filter(function(carrinho) {
+        return carrinho._id != idCarrinho;
+      });
+      res.status(204).end();
+    };
 
 
 
