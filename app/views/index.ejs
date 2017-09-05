@@ -20,15 +20,8 @@
   <p><a href="#!/login" class="btn btn-primary">Logout</a></p>
 
       </div>
-      <div class="jumbotron">
-             <div class="container">
-                 <div class="col-sm-8 col-sm-offset-2">
-                     <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
-                     <div ng-view></div>
-                 </div>
-             </div>
-         </div>
-
+    
+ <div ng-view></div>
     <!-- build:js js;index.min.js-->
   	<script src="vendor/angular/angular.js"></script>
   	<script src="vendor/angular-route/angular-route.js"></script>

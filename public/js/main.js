@@ -32,10 +32,10 @@
               controller: 'CarrinhoController'
             });
 
-          $routeProvider.when('/', {
-              templateUrl: 'partials/carrinhos.html',
-              controller: 'CarrinhosController'
-            });
+          // $routeProvider.when('/', {
+          //     templateUrl: 'partials/carrinhos.html',
+          //     controller: 'CarrinhosController'
+          //   });
             $routeProvider.when('/carrinhos', {
                 templateUrl: 'partials/carrinhos.html',
                 controller: 'CarrinhosController'

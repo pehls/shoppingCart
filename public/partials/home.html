@@ -18,16 +18,8 @@
       <div class="text-right">
         <h1>Hi {{vm.user.username}}!</h1>
   <p><a href="#!/login" class="btn btn-primary">Logout</a></p>
-
       </div>
-      <div class="jumbotron">
-             <div class="container">
-                 <div class="col-sm-8 col-sm-offset-2">
-                     <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
-                     <div ng-view></div>
-                 </div>
-             </div>
-         </div>
+      <div ng-view></div>
 
     <!-- build:js js;index.min.js-->
   	<script src="vendor/angular/angular.js"></script>
@@ -38,7 +30,7 @@
     <script src="js/main.js"></script>
     <script src="js/services/CarrinhoService.js"></script>
     <script src="js/services/UserService.js"></script>
-    <script src="js/services/InterceptorService.js"></script>
+    <!-- <script src="js/services/InterceptorService.js"></script> -->
     <script src="js/services/AuthenticationService.js"></script>
     <script src="js/services/FlashService.js"></script>
   	<script src="js/controllers/CarrinhosController.js"></script>
